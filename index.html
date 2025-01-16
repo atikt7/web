@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercars Sales</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: url('bgimg1.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        
+            z-index: 1;
+        }
+
+        header div {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        header button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background: #ff4500;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        header button:hover {
+            background: #e63e00;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .features {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .feature {
+            flex: 1 1 300px;
+            margin: 1rem;
+            padding: 1rem;
+            background: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .feature img:hover {
+            transform: scale(1.05);
+        }
+
+        .feature h3 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .cta {
+            background: #ff4500;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            animation: moveBackground 5s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            from {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            to {
+                transform: translate(50%, 50%) rotate(45deg);
+            }
+        }
+
+        .cta h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background: white;
+            border: none;
+            color: #ff4500;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta button:hover {
+            background: #f4f4f4;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .feature {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Supercars for Sale</h1>
+            <p>Find your dream car today with our exclusive collection of supercars.</p>
+            <button onclick="scrollToFeatures()">Explore Now</button>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="feature">
+            <img src="car1.jpg" alt="Car 1">
+            <h2>BugattiChiron</h2>
+            <p>Price: 2,80,00,000/ </p>
+            <p> Model:2020.</p>
+            <p><strong>Experience unmatched speed and luxury</strong></p>
+        </div>
+        <div class="feature">
+            <img src="car2.jpg" alt="Car 2">
+            <h2>Lamborgini-Urus</h2>
+            <p>Price:5,40,00,000/ </p>
+            <p> Model:2024.</p>
+            <p><strong>Designed for those who demand the best.</strong></p>
+        </div>
+        <div class="feature">
+            <img src="car3.jpg" alt="Car 3">
+            <h2>Mercedes-Benz G-Class</h2>
+            <p>Price:3,40,00,000/ </p>
+            <p>Model:2022.</p>
+            <p><strong>Where power meets elegance.</strong></p>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Drive?</h2>
+        <p>Contact us to book a test drive or learn more about our supercars.</p>
+<p>yoursupercar@gmail.com</p>
+<p>+91-9425665987 / 020-256-7548 <p>
+
+        <button onclick="alert('Thank you for your interest!')">Contact Us</button>
+    </section>
+
+    <footer>
+        <p></p>
+    </footer>
+
+    <script>
+        function scrollToFeatures() {
+            document.getElementById('features').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
